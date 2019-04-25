@@ -1,0 +1,24 @@
+<div class="container top30">
+	<div class="row">
+		<div class="col-md-3">
+			<label for='termino'>Buscar Album</label>
+			<input type="text" placeholder="Ingrese Palabra Clave" class="form-control" (keyup)="buscaTeam()" [(ngModel)]="termino">
+    </div>
+    
+		<div class="col-md-9" *ngIf="termino.length < 1"><h1 class="greyletter">Buscar Albumes</h1><hr>
+			<p>Encuentre lo que guste dentro de una gran selección de artistas.</p>
+    </div>
+    
+		<div class="col-md-9" *ngIf="termino.length > 1">
+			<h2 class="overtitle">{{termino}}</h2>
+			<hr>
+			<div class="row">
+				<div *ngFor="let equipo of _gamelist.teamlist" class="col-md-3 text-center cuadro top30" [routerLink]="['/team', equipo.idTeam]">
+					<img [src]="equipo.strTeamBadge" class="img-thumbnail mw300">
+					<h5 class="team">{{equipo.strTeam}}</h5>
+					<span class="datateam">{{equipo.strSport}} | {{equipo.strCountry}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

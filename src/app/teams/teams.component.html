@@ -1,0 +1,84 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-12 backy" [ngStyle]="{ 'background-image': '[url](equipo[0].strFanart1)'}">
+        <h1>Hola</h1>
+      </div>
+
+    </div>
+    <div class="row">
+
+      <div class="col-md-3 text-center">
+          <img [src]="equipo.strTeamBadge" class="mw300">
+          <ul class="text-left">
+            <li>{{equipo.strLeague}} </li>
+            <li>Sport: {{equipo.strSport}} </li>
+            <li>Founded at {{equipo.intFormedYear}} </li>
+            <li>Country: {{equipo.strCountry}} </li>
+            <li>Nickname: {{equipo.strAlternate}} </li>
+          </ul>
+      </div>
+
+      <div class="col-md-9">
+        <h3>About Team</h3>
+        <p class="text-justify">{{equipo.strDescriptionEN}}</p>
+
+        <h4 class="squadatit">Players</h4>
+        <table class="table table-hover twidth">
+          <thead>
+            <th></th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Country</th>
+          </thead>
+          <tr *ngFor="let player of jugadores" [routerLink]="['/player', player.idPlayer]">
+            <td><img [src]="player | imageSinFoto" class="cutout"></td>
+            <td class="tdName">{{player.strPlayer}}</td>
+            <td class="tdPosition">{{player.strPosition}}</td>
+            <td class="tdNation">{{player.strNationality}}</td>
+          </tr>
+        </table>
+
+
+        <h2 class="squadatit">Latest Results</h2>
+        <table class="table table-hover twidth">
+          <thead>
+            <th>Date</th>
+            <th>Home Team</th>
+            <th>Away Team</th>
+            <th>Result</th>
+            <th>Competition</th>
+          </thead>
+          <tr *ngFor="let match of resultados">
+            <td>{{match.dateEvent}} </td>
+            <td>{{match.strHomeTeam}} </td>
+            <td>{{match.strAwayTeam}} </td>
+            <td>{{match.intHomeScore}} - {{match.intAwayScore}} </td>
+            <td>{{match.strLeague}}</td>
+          </tr>
+        </table>
+
+        <h2 class="squadatit">Next Matches</h2>
+        <table class="table table-hover twidth">
+          <thead>
+            <th>Date</th>
+            <th>Home Team</th>
+            <th>Away Team</th>
+            <th>Result</th>
+            <th>Competition</th>
+          </thead>
+          <tr *ngFor="let match of proximos">
+            <td>{{match.dateEvent}} </td>
+            <td>{{match.strHomeTeam}} </td>
+            <td>{{match.strAwayTeam}} </td>
+            <td></td>
+            <td>{{match.strLeague}}</td>
+          </tr>
+        </table>
+
+      </div>
+
+    </div>
+  </div>
+</div>

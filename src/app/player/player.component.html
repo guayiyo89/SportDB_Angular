@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <table class="twidth">
+        <tr>
+          <td>Birthday:</td>
+          <td>{{jugador.dateBorn}} </td>
+        </tr>
+        <tr>
+          <td>Team:</td>
+          <td>{{jugador.strTeam}}</td>
+        </tr>
+        <tr>
+          <td>Nationality: </td>
+          <td>{{jugador.strNationality}}</td>
+        </tr>
+        <tr>
+          <td>Height:</td>
+          <td>{{jugador.strHeight}} m</td>
+        </tr>
+        <tr>
+          <td>Weight:</td>
+          <td>{{jugador.strWeight}} kg</td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-8">
+      <h2 class="maintit">{{jugador.strPlayer}}</h2>
+      <p class="text-justify">
+        {{jugador.strDescriptionEN}}
+      </p>
+
+      <h2 class="squadatit">Player Career</h2>
+      <table class="table table-hover twidth">
+        <thead>
+          <th></th>
+          <th>Team</th>
+          <th>Joined at</th>
+          <th>Finished at</th>
+        </thead>
+        <tr *ngIf="contrato.lenght > 0">
+          <td><img [src]="contrato.strTeamBadge" class="clubLogo_sm"></td>
+          <td>{{contrato.strTeam}}</td>
+          <td>{{contrato.strYearStart}}</td>
+          <td>{{contrato.strYearEnd}}</td>
+        </tr>
+        <tr *ngFor="let club of carrera" [routerLink]="['/team', club.idFormerTeam]">
+          <td><img [src]="club.strTeamBadge" class="clubLogo_sm"> </td>
+          <td>{{club.strFormerTeam}} </td>
+          <td>{{club.strJoined}} </td>
+          <td>{{club.strDeparted}} </td>
+        </tr>
+      </table>
+
+      <h2 class="squadatit">Honours</h2>
+      <table class="table table-hover twidth">
+        <thead>
+          <th>Team</th>
+          <th>Title</th>
+          <th>Year</th>
+        </thead>
+        <tr *ngFor="let logro of logros">
+          <td>{{logro.strTeam}} </td>
+          <td>{{logro.strHonour}} </td>
+          <td>{{logro.strSeason}}</td>
+        </tr>
+      </table>
+
+
+
+    </div>
+  </div>
+</div>

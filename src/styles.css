@@ -1,0 +1,65 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    box-sizing: border-box;
+}
+
+.cuadro{
+    padding: 5px;
+    border-bottom: 1px dotted rgb(230, 126, 148);
+    color: rgb(102, 106, 155);
+    
+}
+
+.cutout{
+    max-width: 75px;
+}
+
+.twidth{
+    width: 100%;
+}
+.tdName{width: 40%}
+.tdNation,.tdPosition{width: 25%;}
+
+.mw300{width: 100%;}
+
+.clubLogo_sm{width: 50px;}
+@media (max-width: 600px){
+   .mw300{max-width: 300px;}
+}
+
+.maintit{
+    font-family: 'Open Sans', sans-serif;
+    color: #111;
+    text-transform: uppercase;
+    font-size: 3.4em;
+    text-shadow: 0 2px #ffffff, 0 4px #567;
+    padding-bottom: 5px;
+    letter-spacing: -2px;
+    font-weight: 800;
+    transform: skew(-0.9deg, -1.5deg);
+}
+
+.squadatit{
+    font-family: 'Open Sans', sans-serif;
+    color: #EEE;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-shadow: #020201 3px 2px 0;
+    box-shadow: #020201 4px 3px 0;
+    position: relative;
+    display: inline-block;
+    padding: 8px;
+    background-color: #567;
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+}
