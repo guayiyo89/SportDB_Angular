@@ -38,7 +38,7 @@
           <th>Joined at</th>
           <th>Finished at</th>
         </thead>
-        <tr *ngIf="contrato.lenght > 0">
+        <tr *ngIf="contrato != null">
           <td><img [src]="contrato.strTeamBadge" class="clubLogo_sm"></td>
           <td>{{contrato.strTeam}}</td>
           <td>{{contrato.strYearStart}}</td>
