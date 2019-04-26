@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { TeamsComponent } from './teams/teams.component';
 import { PlayerComponent } from './player/player.component';
 import { ImageSinFotoPipe } from './pipes/image-sin-foto.pipe';
+import { LeagueComponent } from './league/league.component';
+import { LeagueListComponent } from './league-list/league-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ImageSinFotoPipe } from './pipes/image-sin-foto.pipe';
     GamelistComponent,
     TeamsComponent,
     PlayerComponent,
-    ImageSinFotoPipe
+    ImageSinFotoPipe,
+    LeagueComponent,
+    LeagueListComponent
   ],
   imports: [
     BrowserModule,

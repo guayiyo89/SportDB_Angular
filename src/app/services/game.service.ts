@@ -12,6 +12,7 @@ export class GameService {
   playerlistTeam: any [] = [];
   game: any;
 
+
   baseUrl:string = 'https://www.thesportsdb.com/api/v1/json';
 
   constructor(private http:HttpClient) { }
@@ -111,6 +112,42 @@ export class GameService {
       })
     )
   }
+
+  getLeague(id:string){
+    let url = `${this.baseUrl}/1/lookupleague.php?&id=${id}`;
+    return this.http.get(url).pipe(
+      map((resp:any) => {
+        return resp.table;
+      })
+    )
+  }
+
+  getLeagueTable(id:string, season:number){
+    let url = `${this.baseUrl}/1/lookuptable.php?&l=${id}&s=${season}`;
+    return this.http.get(url).pipe(
+      map((resp:any) => {
+        return resp.table;
+      })
+    )
+  }
+
+  getResultsbyLeague(id:string){
+    let url = `${this.baseUrl}/1/eventspastleague.php?&id=${id}`;
+    return this.http.get(url).pipe(
+      map((resp:any) => {
+        return resp.events;
+      })
+    )
+  }
+
+  getFixtureLeague(id:string, season:number, fixture: number){
+    let url = `${this.baseUrl}/1/eventsround.php?id=${id}&r=${fixture}&s=${season}`;
+    return this.http.get(url).pipe(
+      map((resp:any) => {
+        return resp.events;
+      })
+    )
+    }
 
 
 }
