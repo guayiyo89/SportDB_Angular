@@ -104,11 +104,11 @@ export class GameService {
 
   //Obtengo Las Ligas
 
-  getLeagueList(){
-    let url = `${this.baseUrl}/1/all_leagues.php?&s=Soccer`;
+  getLeagueList(pais:string){
+    let url = `${this.baseUrl}/1/search_all_leagues.php?c=${pais}&s=Soccer`;
     return this.http.get(url).pipe(
       map((resp:any) => {
-        return resp.leagues;
+        return resp.countrys;
       })
     )
   }
@@ -147,6 +147,13 @@ export class GameService {
         return resp.events;
       })
     )
+    }
+
+    getLeagueTeams(id:string){
+      let url = `${this.baseUrl}/1/lookup_all_teams.php?id=${id}`;
+      return this.http.get(url).pipe(
+        map((resp:any) => {return resp.teams})
+      )
     }
 
 

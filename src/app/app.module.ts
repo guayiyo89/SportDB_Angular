@@ -12,6 +12,14 @@ import { PlayerComponent } from './player/player.component';
 import { ImageSinFotoPipe } from './pipes/image-sin-foto.pipe';
 import { LeagueComponent } from './league/league.component';
 import { LeagueListComponent } from './league-list/league-list.component';
+import { EnglandComponent } from './league-list/england/england.component';
+import { EuropaComponent } from './league-list/europa/europa.component';
+import { WorldComponent } from './league-list/world/world.component';
+import { SpainComponent } from './league-list/spain/spain.component';
+import { GermanyComponent } from './league-list/germany/germany.component';
+import { PortugalComponent } from './league-list/portugal/portugal.component';
+import { FranceComponent } from './league-list/france/france.component';
+import { ItaliaComponent } from './league-list/italia/italia.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +29,15 @@ import { LeagueListComponent } from './league-list/league-list.component';
     PlayerComponent,
     ImageSinFotoPipe,
     LeagueComponent,
-    LeagueListComponent
+    LeagueListComponent,
+    EnglandComponent,
+    EuropaComponent,
+    WorldComponent,
+    SpainComponent,
+    GermanyComponent,
+    PortugalComponent,
+    FranceComponent,
+    ItaliaComponent
   ],
   imports: [
     BrowserModule,

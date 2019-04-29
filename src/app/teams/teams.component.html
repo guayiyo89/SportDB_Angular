@@ -32,7 +32,7 @@
             <th>Position</th>
             <th>Country</th>
           </thead>
-          <tr *ngFor="let player of jugadores" [routerLink]="['/player', player.idPlayer]">
+          <tr class="puntero" *ngFor="let player of jugadores" [routerLink]="['/player', player.idPlayer]">
             <td><img [src]="player | imageSinFoto" class="cutout"></td>
             <td class="tdName">{{player.strPlayer}}</td>
             <td class="tdPosition">{{player.strPosition}}</td>
