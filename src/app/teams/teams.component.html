@@ -1,15 +1,21 @@
+<div class="heading">
+  <div class="container top50">
+    <h1 class="titeam">
+      {{equipo.strTeam}}
+    </h1>
+    <h1 class="sombratit">
+      {{equipo.strTeam}}
+    </h1>
+  </div>
+  </div>
+
 <div class="container-fluid">
-  <div class="container">
+
+  <div class="container">    
+
     <div class="row">
 
-      <div class="col-md-12 backy" [ngStyle]="{ 'background-image': '[url](equipo[0].strFanart1)'}">
-        <h1>Hola</h1>
-      </div>
-
-    </div>
-    <div class="row">
-
-      <div class="col-md-3 text-center">
+      <div class="col-md-3 text-center stickme">
           <img [src]="equipo.strTeamBadge" class="mw300">
           <ul class="text-left">
             <li>{{equipo.strLeague}} </li>
@@ -21,7 +27,7 @@
       </div>
 
       <div class="col-md-9">
-        <h3>About Team</h3>
+        <h2 class="squadatit">About Team</h2>
         <p class="text-justify">{{equipo.strDescriptionEN}}</p>
 
         <h4 class="squadatit">Players</h4>
